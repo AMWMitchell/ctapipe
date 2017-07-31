@@ -28,8 +28,8 @@ _CAMERA_GEOMETRY_TABLE = {
     (2048, 2.2): ('SST', 'CHEC', 'rectangular', 0 * u.degree, 0 * u.degree),
     (2048, 36.0): ('LST', 'HESS-II', 'hexagonal', 0 * u.degree,
                    0 * u.degree),
-    (960, None): ('MST', 'HESS-I', 'hexagonal', 0 * u.degree,
-                  0 * u.degree),
+    (960, 14.98): ('MST', 'HESS-I', 'hexagonal', 0 * u.degree,
+                  0 * u.degree),# 14.98 was None
     (1855, 16.0): ('MST', 'NectarCam', 'hexagonal',
                    0 * u.degree, -100.893 * u.degree),
     (1855, 28.0): ('LST', 'LSTCam', 'hexagonal',
