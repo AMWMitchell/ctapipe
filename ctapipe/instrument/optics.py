@@ -14,8 +14,9 @@ _FOCLEN_TO_TEL_INFO = {
     2.15: ('SST', 'ASTRI', 'SC'),
     5.6: ('SST', '1M', 'SC'),
     5.58: ('MST', 'SCT', 'SC'),
-    5.59: ('MST', 'SCT', 'SC')
-
+    5.59: ('MST', 'SCT', 'SC'),
+    14.98: ('HESS-I','','DC'),
+    36.0: ('HESS-II','','DC')
 }
 
 
@@ -121,4 +122,7 @@ def telescope_info_from_metadata(focal_length):
     KeyError:
        if unable to find optics type
     """
+    print "_FOCLEN_TO_TEL:", _FOCLEN_TO_TEL_INFO
+    print "fl = ", round(focal_length.to('m').value,2)
+
     return _FOCLEN_TO_TEL_INFO[round(focal_length.to('m').value, 2)]

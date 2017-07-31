@@ -30,18 +30,18 @@ def analyze_muon_event(event, params=None, geom_dict=None):
     # Declare a dict to define the muon cuts (ASTRI and SCT missing)
     muon_cuts = {}
 
-    names = ['LST:LSTCam','MST:NectarCam','MST:FlashCam','MST-SCT:SCTCam','SST-1M:DigiCam','SST-GCT:CHEC','SST-ASTRI:ASTRICam']
-    TailCuts = [(5,7),(5,7),(10,12),(5,7),(5,7),(5,7),(5,7)] #10,12?
-    impact = [(0.2,0.9),(0.1,0.95),(0.2,0.9),(0.2,0.9),(0.1,0.95),(0.1,0.95),(0.1,0.95)]
-    ringwidth = [(0.04,0.08),(0.02,0.1),(0.01,0.1),(0.02,0.1),(0.01,0.5),(0.02,0.2),(0.02,0.2)]
-    TotalPix = [1855.,1855.,1764.,11328.,1296.,2048.,2368.]#8% (or 6%) as limit
-    MinPix = [148.,148.,141.,680.,104.,164.,142.]
+    names = ['LST:LSTCam','MST:NectarCam','MST:FlashCam','MST-SCT:SCTCam','SST-1M:DigiCam','SST-GCT:CHEC','SST-ASTRI:ASTRICam','HESS-I','HESS-II'] # check hess names
+    TailCuts = [(5,7),(5,7),(10,12),(5,7),(5,7),(5,7),(5,7),(5,10),(5,10)] #10,12?
+    impact = [(0.2,0.9),(0.1,0.95),(0.2,0.9),(0.2,0.9),(0.1,0.95),(0.1,0.95),(0.1,0.95),(0.2,0.95),(0.2,0.95)]
+    ringwidth = [(0.04,0.08),(0.02,0.1),(0.01,0.1),(0.02,0.1),(0.01,0.5),(0.02,0.2),(0.02,0.2),(0.04,0.08),(0.04,0.08)]
+    TotalPix = [1855.,1855.,1764.,11328.,1296.,2048.,2368.,960.,2048.]#8% (or 6%) as limit
+    MinPix = [148.,148.,141.,680.,104.,164.,142.,30.,100.]
     #Need to either convert from the pixel area in m^2 or check the camera specs
-    AngPixelWidth = [0.1,0.2,0.18,0.067,0.24,0.2,0.17] #Found from TDRs (or the pixel area)
+    AngPixelWidth = [0.1,0.2,0.18,0.067,0.24,0.2,0.17,0.16,0.067] #Found from TDRs (or the pixel area)
     hole_rad = []#Need to check and implement
-    cam_rad = [2.26,3.96,3.87,4.,4.45,2.86,5.25]#Found from the field of view calculation
-    sec_rad = [0.*u.m,0.*u.m,0.*u.m,2.7*u.m,0.*u.m,1.*u.m,1.8*u.m]
-    sct = [False,False,False,True,False,True,True]
+    cam_rad = [2.26,3.96,3.87,4.,4.45,2.86,5.25,1.26,1.01]#Found from the field of view calculation
+    sec_rad = [0.*u.m,0.*u.m,0.*u.m,2.7*u.m,0.*u.m,1.*u.m,1.8*u.m,0.*u.m,0.*u.m]
+    sct = [False,False,False,True,False,True,True,False,False]
 
 
     muon_cuts = {'Name':names,'TailCuts':TailCuts,'Impact':impact,'RingWidth':ringwidth,'TotalPix':TotalPix,'MinPix':MinPix,'CamRad':cam_rad,'SecRad':sec_rad,'SCT':sct,'AngPixW':AngPixelWidth}
