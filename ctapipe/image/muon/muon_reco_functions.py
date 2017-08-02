@@ -30,7 +30,7 @@ def analyze_muon_event(event, params=None, geom_dict=None):
     # Declare a dict to define the muon cuts (ASTRI and SCT missing)
     muon_cuts = {}
 
-    names = ['LST:LSTCam','MST:NectarCam','MST:FlashCam','MST-SCT:SCTCam','SST-1M:DigiCam','SST-GCT:CHEC','SST-ASTRI:ASTRICam','MST:HESS-I','LST:HESS-II'] # check hess names
+    names = ['LST:LSTCam','MST:NectarCam','MST:FlashCam','MST-SCT:SCTCam','SST-1M:DigiCam','SST-GCT:CHEC','SST-ASTRI:ASTRICam','MST-HESS-I:unknown','LST-HESS-II:HESS-II'] # check hess names
     TailCuts = [(5,7),(5,7),(10,12),(5,7),(5,7),(5,7),(5,7),(5,10),(5,10)] #10,12?
     impact = [(0.2,0.9),(0.1,0.95),(0.2,0.9),(0.2,0.9),(0.1,0.95),(0.1,0.95),(0.1,0.95),(0.2,0.95),(0.2,0.95)]
     ringwidth = [(0.04,0.08),(0.02,0.1),(0.01,0.1),(0.02,0.1),(0.01,0.5),(0.02,0.2),(0.02,0.2),(0.04,0.08),(0.04,0.08)]

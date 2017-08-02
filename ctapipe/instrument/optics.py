@@ -122,7 +122,4 @@ def telescope_info_from_metadata(focal_length):
     KeyError:
        if unable to find optics type
     """
-    print "_FOCLEN_TO_TEL:", _FOCLEN_TO_TEL_INFO
-    print "fl = ", round(focal_length.to('m').value,2)
-
     return _FOCLEN_TO_TEL_INFO[round(focal_length.to('m').value, 2)]
